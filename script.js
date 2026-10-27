@@ -3,15 +3,24 @@ const START = new Date("2027-05-22T09:00:00+02:00");
 const DURATION_HOURS = 10; // po této době se zobrazí "Turnaj skončil"
 
 // Přihlášené týmy – stačí upravit seznam
-const TEAMS = [
-  "Lorem United",
-  "Ipsum Rangers",
-  "Dolor FC",
-  "Sit Amet Boys",
-  "Consectetur Sokol",
-  "Adipiscing Slavia",
-  "Elit Athletic",
-  "Tempor Stars",
+const TEAMS_OPEN = [
+  "Team 01",
+  "Team 02",
+  "Team 03",
+  "Team 04",
+  "Team 05",
+  "Team 06",
+  "Team 07"
+];
+
+
+// Přihlášené týmy – stačí upravit seznam
+const TEAMS_OLD_BOYS = [
+  "Team 1",
+  "Team 2",
+  "Team 3",
+  "Team 4",
+  "Team 5"
 ];
 
 // Správný tvar slova podle počtu (1 den, 2 dny, 5 dní)
@@ -55,9 +64,9 @@ function tick() {
   $("s-l").textContent = plural(s, "sekunda", "sekundy", "sekund");
 }
 
-function renderTeams() {
-  const list = $("team-list");
-  TEAMS.forEach((name, i) => {
+function renderTeamsOpen() {
+  const list = $("team-list-open");
+  TEAMS_OPEN.forEach((name, i) => {
     const li = document.createElement("li");
     const no = document.createElement("span");
     no.className = "no";
@@ -65,9 +74,23 @@ function renderTeams() {
     li.append(no, name);
     list.append(li);
   });
-  $("team-count").textContent = "(" + TEAMS.length + ")";
+  $("team-count-open").textContent = "(" + TEAMS_OPEN.length + ")";
 }
 
-renderTeams();
+function renderTeamsOldBoys() {
+  const list = $("team-list-old-boys");
+  TEAMS_OPEN.forEach((name, i) => {
+    const li = document.createElement("li");
+    const no = document.createElement("span");
+    no.className = "no";
+    no.textContent = i + 1;
+    li.append(no, name);
+    list.append(li);
+  });
+  $("team-count-old-boys").textContent = "(" + TEAMS_OLD_BOYS.length + ")";
+}
+
+renderTeamsOpen();
+renderTeamsOldBoys();
 tick();
 const timer = setInterval(tick, 1000);
