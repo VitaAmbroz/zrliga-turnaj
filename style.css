@@ -1,0 +1,152 @@
+:root {
+  --turf: #14301f;
+  --turf-light: #1d4a2e;
+  --line: #f3f6ee;
+  --chalk: #c9d6c5;
+  --card: #f2c230;
+  --paper: #f7f8f3;
+  --ink: #12231a;
+  --muted: #5b6b60;
+  --head: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "Barlow", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 3.5rem; }
+body {
+  margin: 0;
+  font: 400 1.0625rem/1.65 var(--body);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* Hero: hřiště s kruhem a půlicí čárou */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--turf);
+  color: var(--line);
+  text-align: center;
+  padding: clamp(3rem, 9vw, 6rem) 1.25rem clamp(3rem, 8vw, 5rem);
+}
+.pitch { position: absolute; inset: 0; }
+.pitch::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 3px;
+  background: var(--turf-light);
+}
+.circle {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: min(90vw, 620px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 3px solid var(--turf-light);
+  border-radius: 50%;
+}
+.hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
+
+.date { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--card); font-weight: 500; }
+h1 {
+  margin: 0 0 2rem;
+  font: 800 clamp(2.8rem, 9vw, 5.5rem)/.95 var(--head);
+  letter-spacing: .01em;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.4rem, 2vw, 1rem);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.countdown div {
+  background: var(--turf);
+  border: 2px solid var(--chalk);
+  border-radius: 6px;
+  padding: .6rem .25rem .5rem;
+}
+.countdown b {
+  display: block;
+  font: 800 clamp(2.2rem, 9vw, 4.2rem)/1 var(--head);
+  font-variant-numeric: tabular-nums;
+}
+.countdown span { font-size: .95rem; color: var(--chalk); }
+.status { margin: 1.25rem 0 0; color: var(--chalk); }
+
+/* Navigace */
+.nav {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: .25rem 1.5rem;
+  padding: .75rem 1rem;
+  background: var(--card);
+}
+.nav a {
+  color: var(--ink);
+  font: 600 1.15rem var(--head);
+  text-decoration: none;
+  padding: .1rem .2rem;
+}
+.nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Obsah */
+main { max-width: 780px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
+section { padding: 2.5rem 0 .5rem; }
+h2 { margin: 0 0 1rem; font: 800 2.4rem/1.1 var(--head); }
+.count { font-weight: 600; font-size: 1.4rem; color: var(--muted); }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .75rem;
+  margin: 0 0 1.25rem;
+}
+.facts div { border-left: 4px solid var(--turf); padding-left: .75rem; }
+.facts dt { font-size: .9rem; color: var(--muted); }
+.facts dd { margin: 0; font: 800 1.7rem/1.2 var(--head); }
+
+/* Týmy */
+.teams {
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: .6rem;
+}
+.teams li {
+  display: flex; align-items: center; gap: .75rem;
+  background: #fff;
+  border: 1px solid #dfe5da;
+  border-radius: 6px;
+  padding: .5rem .75rem;
+  font-weight: 500;
+}
+.teams .no {
+  flex: none;
+  min-width: 2rem; height: 2rem;
+  display: grid; place-items: center;
+  background: var(--turf); color: var(--line);
+  border-radius: 50%;
+  font: 800 1.1rem var(--head);
+}
+
+/* Pravidla */
+details { border-bottom: 1px solid #dfe5da; }
+summary {
+  cursor: pointer;
+  padding: .9rem 0;
+  font: 600 1.35rem var(--head);
+}
+details p { margin: 0 0 1rem; max-width: 65ch; }
+
+a { color: var(--turf-light); }
+:focus-visible { outline: 3px solid var(--card); outline-offset: 2px; }
+
+footer { background: var(--turf); color: var(--chalk); text-align: center; padding: 1.5rem 1rem; }
+footer p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

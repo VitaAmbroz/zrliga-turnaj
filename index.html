@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turnaj v malé kopané 2027</title>
+  <meta name="description" content="Pozvánka na turnaj v malé kopané. 22. května 2027 od 9:00.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="pitch" aria-hidden="true"><span class="circle"></span></div>
+  <div class="hero-inner">
+    <p class="date">Sobota 22. května 2027, 9:00</p>
+    <h1>Turnaj v malé kopané</h1>
+
+    <div class="countdown" id="countdown" role="timer" aria-live="off">
+      <div><b id="d">0</b><span id="d-l">dní</span></div>
+      <div><b id="h">00</b><span id="h-l">hodin</span></div>
+      <div><b id="m">00</b><span id="m-l">minut</span></div>
+      <div><b id="s">00</b><span id="s-l">sekund</span></div>
+    </div>
+    <p class="status" id="status">Do výkopu zbývá</p>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="#info">Informace</a>
+  <a href="#teams">Týmy</a>
+  <a href="#rules">Pravidla</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<main>
+  <section id="info">
+    <h2>Informace</h2>
+    <dl class="facts">
+      <div><dt>Datum</dt><dd>22. 5. 2027</dd></div>
+      <div><dt>Začátek</dt><dd>9:00</dd></div>
+      <div><dt>Místo</dt><dd>Doplníme</dd></div>
+      <div><dt>Startovné</dt><dd>Doplníme</dd></div>
+    </dl>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+  </section>
+
+  <section id="teams">
+    <h2>Přihlášené týmy <span class="count" id="team-count"></span></h2>
+    <ol class="teams" id="team-list"></ol>
+  </section>
+
+  <section id="rules">
+    <h2>Pravidla</h2>
+    <details open>
+      <summary>Herní systém</summary>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    </details>
+    <details>
+      <summary>Délka zápasů a střídání</summary>
+      <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+    </details>
+    <details>
+      <summary>Složení týmu</summary>
+      <p>Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+    </details>
+    <details>
+      <summary>Disciplinární ustanovení</summary>
+      <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam.</p>
+    </details>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Přihlášky a dotazy: <a href="mailto:turnaj@example.cz">turnaj@example.cz</a></p>
+  </section>
+</main>
+
+<footer>
+  <p>Turnaj v malé kopané 2027</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
