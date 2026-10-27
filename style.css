@@ -11,6 +11,44 @@
   --body: "Barlow", system-ui, sans-serif;
 }
 
+/* Tmavý režim */
+:root[data-theme="dark"] {
+  --turf: #0b2a1a;
+  --turf-light: #34c77b;
+  --line: #e8f3ec;
+  --chalk: #9fc4b0;
+  --card: #1a2e25;
+  --paper: #10201a;
+  --ink: #e8f3ec;
+  --muted: #94b0a2;
+  color-scheme: dark;
+}
+
+/* Plynulé přepnutí */
+body, header, nav, section, details, footer, li {
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+
+/* Přepínač */
+.theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .35);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+.theme-toggle:hover { background: rgba(0, 0, 0, .55); }
+.theme-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 3.5rem; }
 body {

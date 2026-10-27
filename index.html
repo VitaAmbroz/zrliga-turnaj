@@ -9,9 +9,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+	
+	<script>
+		(function () {
+			var t = null;
+			try { t = localStorage.getItem("theme"); } catch (e) {}
+			if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+			document.documentElement.setAttribute("data-theme", t);
+		})();
+	</script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Přepnout tmavý režim"></button>
 
 <header class="hero">
   <div class="pitch" aria-hidden="true"><span class="circle"></span></div>

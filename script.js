@@ -94,3 +94,24 @@ renderTeamsOpen();
 renderTeamsOldBoys();
 tick();
 const timer = setInterval(tick, 1000);
+
+
+// Přepínání světlého / tmavého režimu
+(function () {
+  const root = document.documentElement;
+  const btn = $("theme-toggle");
+
+  function apply(theme) {
+    root.setAttribute("data-theme", theme);
+    btn.textContent = theme === "dark" ? "☀" : "☾";
+    btn.setAttribute("aria-label", theme === "dark" ? "Přepnout na světlý režim" : "Přepnout na tmavý režim");
+  }
+
+  apply(root.getAttribute("data-theme") || "light");
+
+  btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    apply(next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+})();
