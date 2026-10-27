@@ -38,11 +38,11 @@ body, header, nav, section, details, footer, li {
 /* Přepínač */
 .theme-toggle {
   position: fixed;
-  top: 12px;
-  right: 12px;
+  top: 6px;
+  right: 6px;
   z-index: 100;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border: 1px solid rgba(255, 255, 255, .35);
   border-radius: 50%;
   background: rgba(0, 0, 0, .35);
