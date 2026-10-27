@@ -1,12 +1,12 @@
 :root {
-  --turf: #14301f;
-  --turf-light: #1d4a2e;
-  --line: #f3f6ee;
-  --chalk: #c9d6c5;
-  --card: #f2c230;
-  --paper: #f7f8f3;
-  --ink: #12231a;
-  --muted: #5b6b60;
+  --turf: #1b6b4a;        /* hlavní tmavá zelená (hlavička, patička) */
+  --turf-light: #3dbe8b;  /* světlejší zelená (akcenty, hover) */
+  --line: #f3faf6;        /* světlé čáry a text na tmavém podkladu */
+  --chalk: #cfe9dc;       /* jemný mátový tón pro méně důležitý text */
+  --card: #ffffff;        /* dříve žlutá, nyní bílá */
+  --paper: #f3faf6;       /* pozadí stránky */
+  --ink: #183328;         /* hlavní text */
+  --muted: #5a7468;       /* tlumený text */
   --head: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "Barlow", system-ui, sans-serif;
 }

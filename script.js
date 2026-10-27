@@ -79,7 +79,7 @@ function renderTeamsOpen() {
 
 function renderTeamsOldBoys() {
   const list = $("team-list-old-boys");
-  TEAMS_OPEN.forEach((name, i) => {
+  TEAMS_OLD_BOYS.forEach((name, i) => {
     const li = document.createElement("li");
     const no = document.createElement("span");
     no.className = "no";
