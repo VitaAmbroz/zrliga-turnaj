@@ -1,12 +1,15 @@
 :root {
   --turf: #1b6b4a;        /* hlavní tmavá zelená (hlavička, patička) */
-  --turf-light: #3dbe8b;  /* světlejší zelená (akcenty, hover) */
-  --line: #f3faf6;        /* světlé čáry a text na tmavém podkladu */
+  --turf-light: #3dbe8b;  /* světlejší zelená (čáry hřiště) */
+  --line: #f3faf6;        /* světlý text na tmavém podkladu */
   --chalk: #cfe9dc;       /* jemný mátový tón pro méně důležitý text */
-  --card: #ffffff;        /* dříve žlutá, nyní bílá */
+  --card: #ffffff;        /* karty, navigace */
   --paper: #f3faf6;       /* pozadí stránky */
   --ink: #183328;         /* hlavní text */
   --muted: #5a7468;       /* tlumený text */
+  --border: #d5e6dc;      /* okraje karet a oddělovače */
+  --accent: #1b6b4a;      /* čísla týmů, svislé čáry u údajů */
+  --link: #1b6b4a;        /* odkazy */
   --head: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "Barlow", system-ui, sans-serif;
 }
@@ -17,10 +20,13 @@
   --turf-light: #34c77b;
   --line: #e8f3ec;
   --chalk: #9fc4b0;
-  --card: #1a2e25;
+  --card: #182b22;
   --paper: #10201a;
   --ink: #e8f3ec;
   --muted: #94b0a2;
+  --border: #264236;
+  --accent: #2a6b49;
+  --link: #5fd69b;
   color-scheme: dark;
 }
 
@@ -86,7 +92,7 @@ body {
 }
 .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
 
-.date { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--card); font-weight: 500; }
+.date { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--line); font-weight: 500; }
 h1 {
   margin: 0 0 2rem;
   font: 800 clamp(2.8rem, 9vw, 5.5rem)/.95 var(--head);
@@ -121,6 +127,7 @@ h1 {
   gap: .25rem 1.5rem;
   padding: .75rem 1rem;
   background: var(--card);
+  border-bottom: 1px solid var(--border);
 }
 .nav a {
   color: var(--ink);
@@ -142,7 +149,7 @@ h2 { margin: 0 0 1rem; font: 800 2.4rem/1.1 var(--head); }
   gap: .75rem;
   margin: 0 0 1.25rem;
 }
-.facts div { border-left: 4px solid var(--turf); padding-left: .75rem; }
+.facts div { border-left: 4px solid var(--accent); padding-left: .75rem; }
 .facts dt { font-size: .9rem; color: var(--muted); }
 .facts dd { margin: 0; font: 800 1.7rem/1.2 var(--head); }
 
@@ -155,8 +162,8 @@ h2 { margin: 0 0 1rem; font: 800 2.4rem/1.1 var(--head); }
 }
 .teams li {
   display: flex; align-items: center; gap: .75rem;
-  background: #fff;
-  border: 1px solid #dfe5da;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: .5rem .75rem;
   font-weight: 500;
@@ -165,13 +172,13 @@ h2 { margin: 0 0 1rem; font: 800 2.4rem/1.1 var(--head); }
   flex: none;
   min-width: 2rem; height: 2rem;
   display: grid; place-items: center;
-  background: var(--turf); color: var(--line);
+  background: var(--accent); color: #fff;
   border-radius: 50%;
   font: 800 1.1rem var(--head);
 }
 
 /* Pravidla */
-details { border-bottom: 1px solid #dfe5da; }
+details { border-bottom: 1px solid var(--border); }
 summary {
   cursor: pointer;
   padding: .9rem 0;
@@ -179,8 +186,8 @@ summary {
 }
 details p { margin: 0 0 1rem; max-width: 65ch; }
 
-a { color: var(--turf-light); }
-:focus-visible { outline: 3px solid var(--card); outline-offset: 2px; }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--turf-light); outline-offset: 2px; }
 
 footer { background: var(--turf); color: var(--chalk); text-align: center; padding: 1.5rem 1rem; }
 footer p { margin: 0; }
